@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
-      child: MaterialApp(home: SplashScreen()),
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: SplashScreen()),
       // child: MaterialApp.router(routerConfig: _appRouter.config()),
     );
   }
