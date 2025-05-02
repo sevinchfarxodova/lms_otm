@@ -6,11 +6,18 @@ class AuthGuard extends AutoRouteGuard {
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) async {
     final isLoggedIn = AuthStateService().isLoggedIn;
+    print(isLoggedIn);
 
     if (!isLoggedIn) {
-      router.replace(SplashRoute());
-      resolver.next();
+      print("not logged in");
+      // resolver.redirectUntil(LoginRoute());
+      router.replace(LoginRoute());
+
+
+      // resolver.next();
     } else {
+      print(" logged in");
+
       resolver.next();
     }
   }
