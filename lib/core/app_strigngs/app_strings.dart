@@ -1,5 +1,5 @@
 class AppStrings{
-  // auth
+  // authhh
   static const String lms = "LMS";
   static const String learningPlatformInUzbekistan = "Learning Platform In Uzbekistan";
   static const String tilniTanlang = "Tilni tanlang";
