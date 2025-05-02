@@ -2,6 +2,7 @@ class AppIcons {
   static const String _baseIconUrl = "assets/icons";
 
   static const String languageIcon = "$_baseIconUrl/language.svg";
+  static const String universityIcon = "$_baseIconUrl/university.svg";
 
   static const String uzFlagIcon = "$_baseIconUrl/uz_flag.svg";
   static const String ruFlagIcon = "$_baseIconUrl/ru_flag.svg";

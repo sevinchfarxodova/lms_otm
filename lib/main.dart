@@ -4,6 +4,7 @@ import 'package:lms_test/core/routes/app_router.dart';
 import 'package:lms_test/feature/auth/presentation/screens/splash_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
