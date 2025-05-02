@@ -6,10 +6,12 @@ Widget customText({
   Color? textColor,
   double? fontSize,
   FontWeight? fontWeight,
+  TextAlign? textAlign,
 }) {
   return Text(
     text,
     maxLines: 5,
+    textAlign: textAlign ?? TextAlign.start,
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
       color: textColor,
