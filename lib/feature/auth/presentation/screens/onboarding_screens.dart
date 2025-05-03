@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lms_test/core/utils/app_images.dart';
+import 'package:lms_test/feature/auth/presentation/screens/login_screen.dart';
 import 'package:lms_test/feature/auth/presentation/screens/select_university_screen.dart';
 import 'package:lms_test/feature/auth/presentation/widgets/auth_button.dart';
 import 'package:lms_test/feature/auth/presentation/widgets/boarding_widget.dart';
+
+import '../../../../core/utils/app_colors.dart';
 
 @RoutePage()
 class OnboardingScreens extends StatefulWidget {
@@ -62,19 +65,17 @@ class OnboardingScreensState extends State<OnboardingScreens> {
                       ),
                 ),
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: List.generate(
-              //     mainTexts.length,
-              //     (index) => _buildDot(index),
-              //   ),
-              // ),
-              SizedBox(height: 30.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  mainTexts.length,
+                  (index) => _buildDot(index),
+                ),
+              ),
+              SizedBox(height: 60.h),
               AuthButton(
                 title:
-                    _currentPage == mainTexts.length - 1
-                        ? "Get Started"
-                        : "Next",
+                    _currentPage == mainTexts.length - 1 ? "Keyingisi" : "Next",
                 onPressed: () {
                   if (_currentPage < mainTexts.length - 1) {
                     _pageController.nextPage(
@@ -92,6 +93,21 @@ class OnboardingScreensState extends State<OnboardingScreens> {
                   }
                 },
               ),
+              SizedBox(height: 4.h),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ),
+                  );
+                },
+                child: Text(
+                  "O’tkazib yuborish",
+                  style: TextStyle(fontSize: 12, color: AppColors.mainColor),
+                ),
+              ),
             ],
           ),
         ),
@@ -99,18 +115,18 @@ class OnboardingScreensState extends State<OnboardingScreens> {
     );
   }
 
-  // Widget _buildDot(int index) {
-  //   return Container(
-  //     margin: EdgeInsets.symmetric(horizontal: 5.h),
-  //     width: _currentPage == index ? 32.w : 8.h,
-  //     height: 8.h,
-  //     decoration: BoxDecoration(
-  //       color:
-  //           _currentPage == index
-  //               ? AppColors.mainColor
-  //               : AppColors.greyTextColor,
-  //       borderRadius: BorderRadius.circular(10),
-  //     ),
-  //   );
-  // }
+  Widget _buildDot(int index) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 5.h),
+      width: _currentPage == index ? 32.w : 8.h,
+      height: 8.h,
+      decoration: BoxDecoration(
+        color:
+            _currentPage == index
+                ? AppColors.mainColor
+                : AppColors.greyTextColor,
+        borderRadius: BorderRadius.circular(10),
+      ),
+    );
+  }
 }

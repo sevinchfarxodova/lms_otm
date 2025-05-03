@@ -2,8 +2,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart' show RoutePage;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lms_test/core/app_strigngs/app_strings.dart';
 import 'package:lms_test/core/utils/app_icons.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
+import 'package:lms_test/feature/auth/presentation/screens/login_screen.dart';
 import 'package:lms_test/feature/auth/presentation/screens/onboarding_screens.dart';
 import 'package:lms_test/feature/auth/presentation/widgets/auth_button.dart';
 import 'package:lms_test/feature/auth/presentation/widgets/language_option.dart';
@@ -30,21 +32,21 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
             SvgPicture.asset(AppIcons.languageIcon),
             const SizedBox(height: 16),
             customText(
-              text: "Tilni tanlang",
+              text: AppStrings.tilniTanlang,
               fontSize: 22.sp,
               fontWeight: FontWeight.bold,
             ),
             const SizedBox(height: 8),
             const Text(
-              "O'zingizga qulay tilni tanlab davom eting",
+              AppStrings.ozingizgaQulayTilni,
               style: TextStyle(color: Colors.grey),
             ),
             const SizedBox(height: 24),
 
             // Language Options
             LanguageOption(
-              title: "O'zbek tili",
-              subtitle: "Uzbek",
+              title: AppStrings.uzbekTili,
+              subtitle: AppStrings.uzbek,
               value: 'uz',
               selectedValue: selectedLanguage,
               flagUrl: AppIcons.uzFlagIcon,
@@ -55,8 +57,8 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
               },
             ),
             LanguageOption(
-              title: "Русский язык",
-              subtitle: "Rus tili",
+              title: AppStrings.russian,
+              subtitle: AppStrings.rustili,
               value: 'ru',
               selectedValue: selectedLanguage,
               flagUrl: AppIcons.ruFlagIcon,
@@ -67,8 +69,8 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
               },
             ),
             LanguageOption(
-              title: "English",
-              subtitle: "Ingliz tili",
+              title: AppStrings.english,
+              subtitle: AppStrings.InglizTili,
               value: 'en',
               selectedValue: selectedLanguage,
               flagUrl: AppIcons.enFlagIcon,
@@ -83,7 +85,7 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: AuthButton(
-                title: "Keyingisi",
+                title: AppStrings.keyingisi,
                 onPressed: () {
                   Navigator.push(
                     context,
