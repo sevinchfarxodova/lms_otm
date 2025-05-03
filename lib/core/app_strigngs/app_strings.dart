@@ -3,7 +3,7 @@ class AppStrings{
   static const String lms = "LMS";
   static const String learningPlatformInUzbekistan = "Learning Platform In Uzbekistan";
   static const String tilniTanlang = "Tilni tanlang";
-  static const String OzingizgaQulayTilni= "O’zingizga qulay tilni tanlab davom eting";
+  static const String ozingizgaQulayTilni= "O’zingizga qulay tilni tanlab davom eting";
   static const String uzbekTili = "O’zbek tili";
   static const String uzbek = "Uzbek";
   static const String russian = "Русский язык";
