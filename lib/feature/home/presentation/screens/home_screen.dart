@@ -9,10 +9,25 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          customText(text: "Home Screen")
-        ],
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const ProfileHeader(),
+              SizedBox(height: 16.h),
+              const VideoDarsSection(),
+              SizedBox(height: 16.h),
+              const CurrentActivitySection(),
+              SizedBox(height: 20.h),
+              const SemesterStatsSection(),
+              SizedBox(height: 20.h),
+              const AssignmentsSection(),
+            ],
+          ),
+        ),
       ),
     );
   }

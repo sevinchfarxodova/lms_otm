@@ -38,6 +38,8 @@ dependencies:
   auto_route: ^10.0.1
   flutter_svg: ^2.1.0
   shared_preferences: ^2.5.3
+  flutter_bloc: ^9.1.1
+  easy_localization: ^3.0.7+1
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +69,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/translations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart' show RoutePage;
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,14 +21,14 @@ class OnboardingScreensState extends State<OnboardingScreens> {
   int _currentPage = 0;
 
   final List<String> mainTexts = [
-    "Raqamli taʼlim uchun yagona platforma",
-    "Qayerda bo‘lsangiz ham o‘qing",
-    "Resurslaringiz har doim yoningizda",
+    "onboarding1_main_text".tr(),
+    "onboarding2_main_text".tr(),
+    "onboarding3_main_text".tr(),
   ];
   final List<String> subTexts = [
-    "Oliy taʼlim jarayonlari – darslar, baholar, topshiriqlar va xabarnomalar – barchasi bir ilovada.",
-    "Telefon orqali istalgan vaqtda dars materiallariga kirish, topshiriqlarni topshirish va baholarni ko‘rish imkoniyati.",
-    "Fanlarga oid materiallarni yuklab oling va internet bo‘lmasa ham bemalol o‘qing.",
+    "onboarding1_sub_text".tr(),
+    "onboarding2_sub_text".tr(),
+    "onboarding3_sub_text".tr(),
   ];
 
   final List<Widget> images = [
@@ -71,10 +72,10 @@ class OnboardingScreensState extends State<OnboardingScreens> {
               // ),
               SizedBox(height: 30.h),
               AuthButton(
-                title:
-                    _currentPage == mainTexts.length - 1
-                        ? "Get Started"
-                        : "Next",
+                title: "next".tr(),
+                // _currentPage == mainTexts.length - 1
+                //     ? "Get Started"
+                //     : "next".tr(),
                 onPressed: () {
                   if (_currentPage < mainTexts.length - 1) {
                     _pageController.nextPage(
