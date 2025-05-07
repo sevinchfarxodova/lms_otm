@@ -65,7 +65,7 @@ class _SelectUniversityScreenState extends State<SelectUniversityScreen> {
               ),
               const SizedBox(height: 8),
               customText(
-                text: "choose_your_university".tr(),
+                text: "select_your_university".tr(),
                 textAlign: TextAlign.center,
                 textColor: AppColors.greyTextColor,
               ),

@@ -2,7 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_test/core/routes/app_router.dart';
+import 'package:lms_test/feature/auth/presentation/screens/login_screen.dart';
 import 'package:lms_test/feature/auth/presentation/screens/splash_screen.dart';
+import 'package:lms_test/feature/home/presentation/screens/home_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +35,8 @@ class MyApp extends StatelessWidget {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+        // home: SplashScreen(),
+        home: HomeScreen(),
       ),
       // child: MaterialApp.router(routerConfig: _appRouter.config()),
     );

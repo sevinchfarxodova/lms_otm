@@ -2,6 +2,7 @@
     "lms": "LMS",
     "select_language": "Select language",
     "next": "Next",
+    "skip": "Skip",
     "choose_your_language": "Choose your preferred language",
     "onboarding1_main_text": "A unified platform for digital education",
     "onboarding2_main_text": "Study wherever you are",
@@ -18,7 +19,7 @@
     "enter_id": "Enter your student ID",
     "enter_password": "Enter password",
     "remember": "Remember",
-    "remember_password": "Forgot password?",
+    "forget_password": "Forgot password?",
     "login": "Login"
   }
   

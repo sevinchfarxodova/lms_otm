@@ -44,7 +44,7 @@ class _SelectLanguageView extends StatelessWidget {
               SvgPicture.asset(AppIcons.languageIcon),
               const SizedBox(height: 16),
               customText(
-                text: AppStrings.tilniTanlang.tr(),
+                text: "select_language".tr(),
                 fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
               ),
@@ -94,6 +94,7 @@ class _SelectLanguageView extends StatelessWidget {
                             ),
                       ),
                     ],
+
                   );
                 },
               ),

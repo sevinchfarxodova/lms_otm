@@ -21,4 +21,7 @@ class AppIcons {
   static const String bookIcon = "$_baseIconUrl/book.svg";
   static const String chartIcon = "$_baseIconUrl/chart.svg";
   static const String profileIcon = "$_baseIconUrl/profile.svg";
+
+  static const String videoIcon = "$_baseIconUrl/video_icon.svg";
+  static const String videoLessonIcon = "$_baseIconUrl/video_lesson.svg";
 }
