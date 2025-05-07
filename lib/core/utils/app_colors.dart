@@ -11,11 +11,14 @@ class AppColors {
   static const greenColor = Color(0xff4BB67D);
   static const orangeColor = Color(0xffFC8B36);
 
-  static const lightRedColor = Color(0xFC8B3666);
+  static const lightRedColor = Color(0xffffc8c9);
   static const redColor = Color(0xffFC3636);
 
-  static const lightBlueColor = Color(0x6F3AF966);
+  static const lightBlueColor = Color(0xffADD8E6);
   static const blueColor = Color(0xff344FD5);
 
-  static const lightGreenColor = Color(0x4BB67D66);
+  static const lightGreenColor = Color(0xffcbf5dd);
+
+  static const blueBackgroundColor = Color(0xffF6F8FB);
+  static const videoContainerBackgroundColor = Color(0x546CE34D);
 }

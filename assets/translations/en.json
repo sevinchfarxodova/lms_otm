@@ -1,0 +1,25 @@
+{
+    "lms": "LMS",
+    "select_language": "Select language",
+    "next": "Next",
+    "skip": "Skip",
+    "choose_your_language": "Choose your preferred language",
+    "onboarding1_main_text": "A unified platform for digital education",
+    "onboarding2_main_text": "Study wherever you are",
+    "onboarding3_main_text": "Your resources are always with you",
+    "onboarding1_sub_text": "Higher education processes — lessons, grades, assignments, and notifications — all in one app.",
+    "onboarding2_sub_text": "Access course materials, submit assignments, and view grades anytime via your phone.",
+    "onboarding3_sub_text": "Download subject materials and read them even without the internet.",
+    "select_university": "Select university",
+    "select_your_university": "Select the higher education institution you are attending",
+    "search": "Search",
+    "all_universities": "All universities",
+    "login_app": "LOGIN TO APP",
+    "enter_id_password": "Please enter your student ID and password",
+    "enter_id": "Enter your student ID",
+    "enter_password": "Enter password",
+    "remember": "Remember",
+    "forget_password": "Forgot password?",
+    "login": "Login"
+  }
+  

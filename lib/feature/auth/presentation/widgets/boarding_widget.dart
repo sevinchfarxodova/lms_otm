@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
 
 class BoardingWidget extends StatelessWidget {
   final String mainText;
   final String subText;
-  final Widget image;
+  final String imageUrl;
 
   const BoardingWidget({
     super.key,
     required this.mainText,
     required this.subText,
-    required this.image,
+    required this.imageUrl,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(),
+    return SizedBox(
+      height: 400.h,
+      width: 300.w,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           customText(
             text: mainText,
@@ -35,7 +37,7 @@ class BoardingWidget extends StatelessWidget {
             textColor: AppColors.blackTextColor,
             fontSize: 20.sp,
           ),
-          image,
+          Expanded(child: SvgPicture.asset(imageUrl)),
         ],
       ),
     );

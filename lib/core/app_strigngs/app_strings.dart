@@ -9,7 +9,7 @@ class AppStrings{
   static const String russian = "Русский язык";
   static const String rustili = "Rus tili";
   static const String english  = "English";
-  static const String InglizTili = "Ingliz tili";
+  static const String inglizTili = "Ingliz tili";
   static const String keyingisi = "Keyingisi";
   static const String otkazibYuborish = "O’tkazib yuborish";
   static const String login  = "Log In ";

@@ -1,5 +1,9 @@
 import 'package:auto_route/auto_route.dart' show RoutePage;
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lms_test/core/utils/app_colors.dart';
+import 'package:lms_test/core/utils/custom_text.dart';
 import 'package:lms_test/feature/auth/presentation/screens/login_screen.dart';
 
 @RoutePage()
@@ -54,22 +58,23 @@ class _SelectUniversityScreenState extends State<SelectUniversityScreen> {
               const SizedBox(height: 24),
               const Icon(Icons.apartment, size: 64, color: Colors.blue),
               const SizedBox(height: 16),
-              const Text(
-                'Universitetni tanlang',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              customText(
+                text: "select_university".tr(),
+                fontSize: 20.sp,
+                fontWeight: FontWeight.bold,
               ),
               const SizedBox(height: 8),
-              const Text(
-                'Siz o‘qiyotgan Oliy taʼlim muassasasini tanlang',
+              customText(
+                text: "select_your_university".tr(),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey),
+                textColor: AppColors.greyTextColor,
               ),
               const SizedBox(height: 24),
               TextField(
                 controller: _searchController,
                 decoration: InputDecoration(
                   prefixIcon: const Icon(Icons.search),
-                  hintText: 'Qidirish',
+                  hintText: "search".tr(),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: const BorderSide(color: Colors.blue),
@@ -77,11 +82,11 @@ class _SelectUniversityScreenState extends State<SelectUniversityScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
-                child: Text(
-                  'Barcha Oliy taʼlim muassasalari',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                child: customText(
+                  text: "all_universities".tr(),
+                  textColor: AppColors.greyTextColor,
                 ),
               ),
               const SizedBox(height: 8),

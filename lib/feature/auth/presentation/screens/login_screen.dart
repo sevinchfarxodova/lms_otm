@@ -1,8 +1,11 @@
 import 'package:auto_route/auto_route.dart' show RoutePage;
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lms_test/core/utils/custom_text.dart';
+import 'package:lms_test/feature/home/presentation/screens/home_screen.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../widgets/auth_checkbox.dart';
+// import '../widgets/auth_checkbox.dart';
 
 @RoutePage()
 class LoginScreen extends StatefulWidget {
@@ -33,8 +36,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   SizedBox(height: 80.h),
 
-               // texts
-               _threeTexts(),
+                  // texts
+                  _threeTexts(),
                   SizedBox(height: 40.h),
                   Container(
                     padding: EdgeInsets.all(12),
@@ -52,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Icons.person_outline,
                               color: AppColors.mainColor,
                             ),
-                            hintText: 'Talaba ID yingingizni kiriting',
+                            hintText: 'enter_id'.tr(),
                             hintStyle: TextStyle(
                               color: AppColors.greyTextColor,
                             ),
@@ -69,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Icons.lock_outline,
                               color: AppColors.mainColor,
                             ),
-                            hintText: 'Parolni kiriting',
+                            hintText: 'enter_password'.tr(),
                             hintStyle: TextStyle(
                               color: AppColors.greyTextColor,
                             ),
@@ -90,9 +93,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       _remember(),
                       TextButton(
                         onPressed: () {},
-                        child: const Text(
-                          'Parolni unutdingizmi?',
-                          style: TextStyle(color: Colors.white),
+                        child: customText(
+                          text: 'forget_password'.tr(),
+                          textColor: AppColors.whiteColor,
                         ),
                       ),
                     ],
@@ -111,44 +114,47 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _remember() {
     return Row(
       children: [
-        AuthCheckboxWg(
-          rememberMe: _rememberMe,
-          onChanged: (value) {
-            setState(() {
-              _rememberMe = value!;
-            });
-          },
-        ),
-        Text('Eslab qolish', style: TextStyle(color: Colors.white)),
+        // AuthCheckboxWg(
+        //   rememberMe: _rememberMe,
+        //   onChanged: (value) {
+        //     setState(() {
+        //       _rememberMe = value!;
+        //     });
+        //   },
+        // ),
+        customText(text: 'remember'.tr(), textColor: AppColors.whiteColor),
       ],
     );
   }
 
   Widget _enterButton() {
-  return  ElevatedButton(
-      onPressed: () {},
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+        );
+      },
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.deepPurple,
+        backgroundColor: AppColors.whiteColor,
+        foregroundColor: AppColors.mainColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         minimumSize: const Size(double.infinity, 50),
       ),
-      child: const Text(
-        'Kirish',
-        style: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-          color: AppColors.mainColor,
-        ),
+      child: customText(
+        text: 'login'.tr(),
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        textColor: AppColors.mainColor,
       ),
     );
   }
 
-  Widget _threeTexts(){
+  Widget _threeTexts() {
     return Column(
       children: [
         Text(
-          'LMS',
+          'lms'.tr(),
           style: TextStyle(
             color: AppColors.whiteColor,
             fontSize: 32,
@@ -157,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
 
         Text(
-          'ILOVAGA KIRISH',
+          'login_app'.tr(),
           style: TextStyle(
             color: AppColors.whiteColor,
             fontSize: 32,
@@ -166,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         SizedBox(height: 10.h),
         Text(
-          'Iltimos talaba ID si va parolingizni kiriting',
+          'enter_id_password'.tr(),
           textAlign: TextAlign.center,
           style: TextStyle(color: AppColors.whiteColor, fontSize: 14),
         ),
