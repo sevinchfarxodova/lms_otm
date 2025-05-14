@@ -21,4 +21,6 @@ class AppColors {
 
   static const blueBackgroundColor = Color(0xffF6F8FB);
   static const videoContainerBackgroundColor = Color(0x546CE34D);
+
+  static const lightPurple = Color(0xffC5B0FD);
 }
