@@ -66,6 +66,6 @@ class AppRouter extends RootStackRouter {
     ),
   ];
 
-  @override
-  List<AutoRouteGuard> get guards => [AuthGuard()];
+  // @override
+  // List<AutoRouteGuard> get guards => [AuthGuard()];
 }
