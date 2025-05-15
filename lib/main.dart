@@ -6,10 +6,13 @@ import 'package:lms_test/feature/auth/presentation/screens/login_screen.dart';
 import 'package:lms_test/feature/auth/presentation/screens/splash_screen.dart';
 import 'package:lms_test/feature/home/presentation/screens/home_screen.dart';
 import 'package:lms_test/feature/lesson_schedule/presentation/screens/lesson_schedule_screen.dart';
+import 'package:lms_test/feature/lessons/presentation/screens/data_analysis_screen.dart';
+import 'package:lms_test/feature/lessons/presentation/screens/lessons_screen.dart';
+import 'package:lms_test/feature/lessons/presentation/screens/tab_bar_screen.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   await EasyLocalization.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
       supportedLocales: [Locale("en"), Locale("uz"), Locale("ru")],
@@ -38,7 +41,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         // home: SplashScreen(),
         // home: HomeScreen(),
-        home: LessonScheduleScreen(),
+        // home: LessonScheduleScreen(),
+        // home: TabBarScreen(),
+        home: LessonScreen(),
       ),
       // child: MaterialApp.router(routerConfig: _appRouter.config()),
     );

@@ -18,8 +18,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController idController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  bool _rememberMe = false;
-  bool _obscureText = true;
+  // bool _rememberMe = false;
+  // bool _obscureText = true;
   bool eye = true;
 
   @override

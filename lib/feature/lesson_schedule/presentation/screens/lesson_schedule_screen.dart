@@ -2,7 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lms_test/core/utils/custom_text.dart';
+import 'package:lms_test/core/utils/app_colors.dart';
+import 'package:lms_test/core/widgets/custom_app_bar.dart';
 import 'package:lms_test/feature/lesson_schedule/presentation/state_menegement/cubit/date_cubit.dart';
 import 'package:lms_test/feature/lesson_schedule/presentation/widgets/date_header.dart';
 import 'package:lms_test/feature/lesson_schedule/presentation/widgets/lesson_schedule_card.dart';
@@ -18,16 +19,8 @@ class LessonScheduleScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) => DateCubit(),
       child: Scaffold(
-        appBar: AppBar(
-          title: customText(
-            text: "Dars jadvali",
-            fontSize: 20.sp,
-            fontWeight: FontWeight.w600,
-          ),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-          elevation: 0,
-        ),
+        backgroundColor: AppColors.whiteColor,
+        appBar: CustomAppBar(title: "Dars jadvali"),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 10.h),
           child: Column(

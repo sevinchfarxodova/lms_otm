@@ -23,4 +23,7 @@ class AppColors {
   static const videoContainerBackgroundColor = Color(0x546CE34D);
 
   static const lightPurple = Color(0xffC5B0FD);
+
+  static const linearGradient1 = Color(0xff54E384);
+  static const linearGradient2 = Color(0xff546CE3);
 }
