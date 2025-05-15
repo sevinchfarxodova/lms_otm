@@ -1,9 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lms_test/core/routes/app_router.dart';
 import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
 import 'package:lms_test/feature/lessons/presentation/widget/lesson_item_card.dart';
 
+@RoutePage()
 class LessonScreen extends StatelessWidget {
   const LessonScreen({super.key});
 
@@ -91,7 +94,12 @@ class LessonScreen extends StatelessWidget {
                 itemCount: subjects.length,
                 itemBuilder: (context, index) {
                   final subject = subjects[index];
-                  return LessonItemCard(subject: subject);
+                  return GestureDetector(
+                    onTap: () {
+                      context.router.push(TabBarRoute());
+                    },
+                    child: LessonItemCard(subject: subject),
+                  );
                 },
               ),
             ),

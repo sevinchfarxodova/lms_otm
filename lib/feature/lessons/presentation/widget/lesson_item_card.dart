@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
-import 'package:lms_test/feature/lessons/presentation/widget/custom_linear_progress_ind.dart';
+import 'package:lms_test/feature/lessons/presentation/widget/lesson_moduls_screen_widgets/custom_linear_progress_ind.dart';
 import 'package:lms_test/feature/lessons/presentation/widget/get_lesson_item_color.dart';
 
 class LessonItemCard extends StatelessWidget {
