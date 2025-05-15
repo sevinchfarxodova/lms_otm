@@ -1,7 +1,7 @@
-import 'package:auto_route/auto_route.dart' show RoutePage;
+import 'package:auto_route/auto_route.dart' show AutoRouterX, RoutePage;
 import 'package:flutter/material.dart';
+import 'package:lms_test/core/routes/app_router.dart';
 import 'package:lms_test/core/utils/app_colors.dart';
-import 'package:lms_test/feature/auth/presentation/screens/select_language_screen.dart';
 
 @RoutePage()
 class SplashScreen extends StatefulWidget {
@@ -15,11 +15,12 @@ class _SplashScreenState extends State<SplashScreen> {
    @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => SelectLanguageScreen()),
-      );
+    Future.delayed(Duration(seconds: 1), () {
+      // Navigator.pushReplacement(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => SelectLanguageScreen()),
+      // );
+      context.router.replace(const SelectLanguageRoute());
     });
   }
 

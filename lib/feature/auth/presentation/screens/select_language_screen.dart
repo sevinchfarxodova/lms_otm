@@ -1,15 +1,15 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:auto_route/auto_route.dart' show RoutePage;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_test/core/app_strigngs/app_strings.dart';
+import 'package:lms_test/core/routes/app_router.dart';
 import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/app_icons.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
 import 'package:lms_test/feature/auth/presentation/cubit/language_cubit.dart';
-import 'package:lms_test/feature/auth/presentation/screens/onboarding_screens.dart';
 import 'package:lms_test/feature/auth/presentation/widgets/auth_button.dart';
 import 'package:lms_test/feature/auth/presentation/widgets/language_option.dart';
 
@@ -94,7 +94,6 @@ class _SelectLanguageView extends StatelessWidget {
                             ),
                       ),
                     ],
-
                   );
                 },
               ),
@@ -105,12 +104,13 @@ class _SelectLanguageView extends StatelessWidget {
                 child: AuthButton(
                   title: "next".tr(),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const OnboardingScreens(),
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => const OnboardingScreens(),
+                    //   ),
+                    // );
+                    context.router.push(OnboardingRoutes());
                   },
                 ),
               ),

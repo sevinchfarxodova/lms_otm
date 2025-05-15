@@ -1,10 +1,10 @@
-import 'package:auto_route/auto_route.dart' show RoutePage;
+import 'package:auto_route/auto_route.dart' show AutoRouterX, RoutePage;
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lms_test/core/routes/app_router.dart';
 import 'package:lms_test/core/utils/app_images.dart';
 import 'package:lms_test/feature/auth/presentation/screens/login_screen.dart';
-import 'package:lms_test/feature/auth/presentation/screens/select_university_screen.dart';
 import 'package:lms_test/feature/auth/presentation/widgets/auth_button.dart';
 import 'package:lms_test/feature/auth/presentation/widgets/boarding_widget.dart';
 
@@ -83,12 +83,13 @@ class OnboardingScreensState extends State<OnboardingScreens> {
                     );
                   }
                   if (_currentPage == mainTexts.length - 1) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SelectUniversityScreen(),
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => SelectUniversityScreen(),
+                    //   ),
+                    // );
+                    context.router.push(LoginRoute());
                   }
                 },
               ),
@@ -97,9 +98,7 @@ class OnboardingScreensState extends State<OnboardingScreens> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => LoginScreen(),
-                    ),
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
                   );
                 },
                 child: Text(

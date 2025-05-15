@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/app_icons.dart';
 import 'package:lms_test/core/widgets/custom_app_bar.dart';
-import 'package:lms_test/feature/lessons/presentation/screens/data_analysis_screen.dart';
+import 'package:lms_test/feature/lessons/presentation/screens/lesson_moduls_screen.dart';
 import 'package:lms_test/feature/lessons/presentation/widget/tab_item.dart';
 
 @RoutePage()
@@ -69,7 +69,7 @@ class _TabBarScreenState extends State<TabBarScreen>
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  DataAnalysisScreen(),
+                  LessonModulsScreen(),
                   Center(child: Text('Topshiriqlar')),
                   Center(child: Text('Natijalar')),
                 ],
