@@ -9,7 +9,7 @@ final icons = [
   AppIcons.homeIcon,
   AppIcons.calendarIcon,
   AppIcons.bookIcon,
-  AppIcons.chartIcon,
+  AppIcons.usefullIcon,
   AppIcons.chartIcon,
 ];
 
@@ -22,18 +22,19 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter(
-      routes: const [
+      routes: [
         HomeNavigationRoute(),
         LessonScheduleNavigationRoute(),
         LessonNavigationRoute(),
-        PerformanceNavigationRoute(),
-        OthersNavigationRoute(),
+        UsefullSectionNavigationRoute(),
+        ProfileNavigationRoute(),
       ],
       builder: (context, child) {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
           body: child,
           bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: AppColors.whiteColor,
             type: BottomNavigationBarType.fixed,
             currentIndex: tabsRouter.activeIndex,
             onTap: tabsRouter.setActiveIndex,

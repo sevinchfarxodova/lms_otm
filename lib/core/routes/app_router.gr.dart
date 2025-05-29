@@ -173,17 +173,17 @@ class MainRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [NimadirScreen]
-class NimadirRoute extends PageRouteInfo<void> {
-  const NimadirRoute({List<PageRouteInfo>? children})
-    : super(NimadirRoute.name, initialChildren: children);
+/// [ProfileScreen]
+class ProfileRoute extends PageRouteInfo<void> {
+  const ProfileRoute({List<PageRouteInfo>? children})
+    : super(ProfileRoute.name, initialChildren: children);
 
-  static const String name = 'NimadirRoute';
+  static const String name = 'ProfileRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const NimadirScreen();
+      return ProfileScreen();
     },
   );
 }
@@ -205,49 +205,17 @@ class OnboardingRoutes extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [OthersNavigationScreen]
-class OthersNavigationRoute extends PageRouteInfo<void> {
-  const OthersNavigationRoute({List<PageRouteInfo>? children})
-    : super(OthersNavigationRoute.name, initialChildren: children);
+/// [ProfileNavigationScreen]
+class ProfileNavigationRoute extends PageRouteInfo<void> {
+  const ProfileNavigationRoute({List<PageRouteInfo>? children})
+    : super(ProfileNavigationRoute.name, initialChildren: children);
 
-  static const String name = 'OthersNavigationRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const OthersNavigationScreen();
-    },
-  );
-}
-
-/// generated route for
-/// [PerformanceNavigationScreen]
-class PerformanceNavigationRoute extends PageRouteInfo<void> {
-  const PerformanceNavigationRoute({List<PageRouteInfo>? children})
-    : super(PerformanceNavigationRoute.name, initialChildren: children);
-
-  static const String name = 'PerformanceNavigationRoute';
+  static const String name = 'ProfileNavigationRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const PerformanceNavigationScreen();
-    },
-  );
-}
-
-/// generated route for
-/// [PerformanceScreen]
-class PerformanceRoute extends PageRouteInfo<void> {
-  const PerformanceRoute({List<PageRouteInfo>? children})
-    : super(PerformanceRoute.name, initialChildren: children);
-
-  static const String name = 'PerformanceRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const PerformanceScreen();
+      return const ProfileNavigationScreen();
     },
   );
 }
@@ -312,6 +280,54 @@ class TabBarRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const TabBarScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [UsefullSectionNavigationScreen]
+class UsefullSectionNavigationRoute extends PageRouteInfo<void> {
+  const UsefullSectionNavigationRoute({List<PageRouteInfo>? children})
+    : super(UsefullSectionNavigationRoute.name, initialChildren: children);
+
+  static const String name = 'UsefullSectionNavigationRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const UsefullSectionNavigationScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [UsefullSectionScreen]
+class UsefullSectionRoute extends PageRouteInfo<void> {
+  const UsefullSectionRoute({List<PageRouteInfo>? children})
+    : super(UsefullSectionRoute.name, initialChildren: children);
+
+  static const String name = 'UsefullSectionRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const UsefullSectionScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [VideoLessonScreen]
+class VideoLessonRoute extends PageRouteInfo<void> {
+  const VideoLessonRoute({List<PageRouteInfo>? children})
+    : super(VideoLessonRoute.name, initialChildren: children);
+
+  static const String name = 'VideoLessonRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const VideoLessonScreen();
     },
   );
 }

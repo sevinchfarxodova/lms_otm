@@ -8,15 +8,8 @@ import 'package:lms_test/feature/lessons/presentation/widget/lesson_moduls_scree
 import 'package:lms_test/feature/lessons/presentation/widget/lesson_moduls_screen_widgets/lesson_modules_tile.dart';
 import 'package:lms_test/feature/lessons/presentation/widget/read_more_text_widget.dart';
 
-class LessonModulsScreen extends StatefulWidget {
+class LessonModulsScreen extends StatelessWidget {
   const LessonModulsScreen({super.key});
-
-  @override
-  State<LessonModulsScreen> createState() => _LessonModulsScreenState();
-}
-
-class _LessonModulsScreenState extends State<LessonModulsScreen> {
-  bool isExpanded = false;
 
   final String text =
       "Ma'lumotlar tahlili (yoki data analysis) — bu mavjud ma'lumotlarni yig'ish, tozalash, o'rganish va ulardan foydali xulosa chiqarish jarayoni. Bu jarayon statistika, dasturlash va vizualizatsiya vositalaridan foydalangan holda amalga oshiriladi.";

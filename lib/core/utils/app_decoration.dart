@@ -6,7 +6,7 @@ class AppDecorations {
   static BoxDecoration currentActivityCard = BoxDecoration(
     color: AppColors.blueBackgroundColor,
     borderRadius: BorderRadius.circular(12.r),
-    border: Border.all(color: Colors.grey.shade300),
+    border: Border.all(color: AppColors.blackTextColor.withOpacity(0.2)),
     boxShadow: [
       BoxShadow(
         color: Colors.grey.withOpacity(0.25),

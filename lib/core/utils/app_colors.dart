@@ -26,4 +26,7 @@ class AppColors {
 
   static const linearGradient1 = Color(0xff54E384);
   static const linearGradient2 = Color(0xff546CE3);
+
+  static const lightMainColor = Color.fromARGB(255, 202, 225, 252);
+  static const messageBubleBgColor = Color(0xffABB1CE);
 }

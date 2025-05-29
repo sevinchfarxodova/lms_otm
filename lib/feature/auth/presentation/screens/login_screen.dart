@@ -3,9 +3,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_test/core/routes/app_router.dart';
+import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
-import 'package:lms_test/feature/home/presentation/screens/home_screen.dart';
-import '../../../../core/utils/app_colors.dart';
 // import '../widgets/auth_checkbox.dart';
 
 @RoutePage()

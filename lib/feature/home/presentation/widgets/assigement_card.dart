@@ -30,7 +30,8 @@ class AssignmentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.r),
+      margin: EdgeInsets.symmetric(vertical: 5.h),
+      padding: EdgeInsets.all(10.r),
       decoration: AppDecorations.currentActivityCard,
       child: Row(
         children: [
@@ -39,14 +40,14 @@ class AssignmentCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 customText(text: title, fontSize: 14.sp),
-                SizedBox(height: 4.h),
+                SizedBox(height: 3.h),
                 customText(
                   text: subtitle,
                   fontSize: 12.sp,
                   textColor: AppColors.greyTextColor,
                   fontWeight: FontWeight.w600,
                 ),
-                SizedBox(height: 8.h),
+                SizedBox(height: 7.h),
                 NoticeContainer(
                   badgeColor: badgeColor,
                   backgroundColor: badgeBackgroundColor,
@@ -60,7 +61,7 @@ class AssignmentCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Icon(Icons.arrow_forward_ios, size: 16.r, color: Colors.grey),
-              SizedBox(height: 30.h),
+              SizedBox(height: 20.h),
               customText(
                 text: taskType,
                 fontSize: 10.sp,

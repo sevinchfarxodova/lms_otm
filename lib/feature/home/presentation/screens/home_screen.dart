@@ -14,9 +14,10 @@ import 'package:lms_test/feature/home/presentation/widgets/stat_item.dart';
 import 'package:lms_test/feature/home/presentation/widgets/video_lesson_section.dart';
 
 @RoutePage()
+// ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
-  bool isEmpty = true;
+  bool isEmpty = false;
 
   @override
   Widget build(BuildContext context) {

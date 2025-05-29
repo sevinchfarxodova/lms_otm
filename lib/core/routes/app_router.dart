@@ -14,10 +14,11 @@ import 'package:lms_test/feature/lesson_schedule/presentation/screens/lesson_sch
 import 'package:lms_test/feature/lessons/presentation/screens/lesson_navigation_screen.dart';
 import 'package:lms_test/feature/lessons/presentation/screens/lessons_screen.dart';
 import 'package:lms_test/feature/lessons/presentation/screens/tab_bar_screen.dart';
-import 'package:lms_test/feature/others/presentation/screens/nimadir_screen.dart';
-import 'package:lms_test/feature/others/presentation/screens/others_navigation_screen.dart';
-import 'package:lms_test/feature/performance/presentation/screens/performance_navigation_screen.dart';
-import 'package:lms_test/feature/performance/presentation/screens/performance_screen.dart';
+import 'package:lms_test/feature/lessons/presentation/screens/video_lesson_screen.dart';
+import 'package:lms_test/feature/profile/presentation/screens/profile_screen.dart';
+import 'package:lms_test/feature/profile/presentation/screens/profile_navigation_screen.dart';
+import 'package:lms_test/feature/performance/presentation/screens/usefull_section_navigation_screen.dart';
+import 'package:lms_test/feature/performance/presentation/screens/usefull_section_screen.dart';
 
 part 'app_router.gr.dart';
 
@@ -55,15 +56,16 @@ class AppRouter extends RootStackRouter {
           children: [
             AutoRoute(page: LessonRoute.page, initial: true),
             AutoRoute(page: TabBarRoute.page),
+            AutoRoute(page: VideoLessonRoute.page)
           ],
         ),
         AutoRoute(
-          page: OthersNavigationRoute.page,
-          children: [AutoRoute(page: NimadirRoute.page, initial: true)],
+          page: ProfileNavigationRoute.page,
+          children: [AutoRoute(page: ProfileRoute.page, initial: true)],
         ),
         AutoRoute(
-          page: PerformanceNavigationRoute.page,
-          children: [AutoRoute(page: PerformanceRoute.page, initial: true)],
+          page: UsefullSectionNavigationRoute.page,
+          children: [AutoRoute(page: UsefullSectionRoute.page, initial: true)],
         ),
       ],
     ),

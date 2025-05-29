@@ -16,13 +16,13 @@ class CustomLinearProgressInd extends StatelessWidget {
   Color _getBackgroundColor(String status) {
     switch (status) {
       case 'Qoniqarli':
-        return AppColors.lightBlueColor;
+        return AppColors.lightMainColor;
       case 'Yiqildi':
         return AppColors.lightRedColor;
       case 'Muvaffaqqiyatli':
         return AppColors.lightGreenColor;
       default:
-        return AppColors.lightBlueColor;
+        return AppColors.lightMainColor;
     }
   }
 

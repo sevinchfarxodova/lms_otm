@@ -11,6 +11,6 @@ Color getLessonItemColor(String status) {
     case 'Muvaffaqiyatli':
       return AppColors.greenColor;
     default:
-      return AppColors.lightBlueColor;
+      return AppColors.lightMainColor;
   }
 }
