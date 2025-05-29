@@ -5,6 +5,8 @@ import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/app_icons.dart';
 import 'package:lms_test/core/widgets/custom_app_bar.dart';
 import 'package:lms_test/feature/lessons/presentation/screens/lesson_moduls_screen.dart';
+import 'package:lms_test/feature/lessons/presentation/screens/results_screen.dart';
+import 'package:lms_test/feature/lessons/presentation/screens/tasks_screen.dart';
 import 'package:lms_test/feature/lessons/presentation/widget/tab_item.dart';
 
 @RoutePage()
@@ -43,6 +45,7 @@ class _TabBarScreenState extends State<TabBarScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       appBar: CustomAppBar(title: "Ma'lumotlar tahlili"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
@@ -69,9 +72,9 @@ class _TabBarScreenState extends State<TabBarScreen>
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  LessonModulsScreen(),
-                  Center(child: Text('Topshiriqlar')),
-                  Center(child: Text('Natijalar')),
+                  const LessonModulsScreen(),
+                  const TasksScreen(),
+                  ResultsScreen(),
                 ],
               ),
             ),

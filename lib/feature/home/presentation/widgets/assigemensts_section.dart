@@ -63,7 +63,7 @@ class AssignmentsSection extends StatelessWidget {
           taskType: "Kurs ishi",
           badgeText: 'Yangi vazifa',
           badgeColor: AppColors.blueColor,
-          badgeBackgroundColor: AppColors.lightBlueColor,
+          badgeBackgroundColor: AppColors.lightMainColor,
           badgeIconUrl: AppIcons.newTaskIcon,
           time: '15.04.2025 23:55',
         ),

@@ -7,4 +7,8 @@ class AppImages {
 
   static const String emptyTaskImage = "$_baseImageUrl/empty.svg";
 
+  static const String linearGrad = "$_baseImageUrl/linear_grad.svg";
+
+  static const String topshiriqYuklanmaganImage =
+      "$_baseImageUrl/topshiriq_yuklanmagan.png";
 }

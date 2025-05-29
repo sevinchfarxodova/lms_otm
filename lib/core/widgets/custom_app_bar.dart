@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
 
 // ignore: must_be_immutable
@@ -12,6 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: AppColors.whiteColor,
       title: customText(
         text: title,
         fontSize: 20.sp,

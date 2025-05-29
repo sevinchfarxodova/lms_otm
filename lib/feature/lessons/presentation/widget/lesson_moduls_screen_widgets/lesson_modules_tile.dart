@@ -1,9 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart' show SvgPicture;
+import 'package:lms_test/core/routes/app_router.dart';
+import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/app_icons.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
 import 'package:lms_test/core/widgets/custom_circular_progress_indicator_grad.dart';
+import 'package:lms_test/feature/lessons/presentation/widget/lesson_moduls_screen_widgets/download_resources.dart';
 import 'package:lms_test/feature/lessons/presentation/widget/lesson_moduls_screen_widgets/module_card_item.dart';
 import 'package:lms_test/feature/lessons/presentation/widget/lesson_moduls_screen_widgets/module_card_questions_widget.dart';
 
@@ -19,6 +23,7 @@ class _LessonModulesTileState extends State<LessonModulesTile> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: AppColors.whiteColor,
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15), // Radius qo'shish
@@ -29,6 +34,7 @@ class _LessonModulesTileState extends State<LessonModulesTile> {
           Theme(
             data: ThemeData().copyWith(dividerColor: Colors.transparent),
             child: ExpansionTile(
+              backgroundColor: AppColors.whiteColor,
               minTileHeight: 20.h,
               internalAddSemanticForOnTap: false,
               title: Row(
@@ -51,10 +57,15 @@ class _LessonModulesTileState extends State<LessonModulesTile> {
               },
               childrenPadding: EdgeInsets.all(10.w),
               children: [
-                ModuleCardItem(
-                  title: "HTML5 yangi standartlari va ularning vazifalari",
-                  isWatched: false,
-                  time: "15:05",
+                GestureDetector(
+                  onTap: () {
+                    context.router.push(VideoLessonRoute());
+                  },
+                  child: ModuleCardItem(
+                    title: "HTML5 yangi standartlari va ularning vazifalari",
+                    isWatched: false,
+                    time: "15:05",
+                  ),
                 ),
                 ModuleCardItem(
                   title: "HTML5 yangi standartlari va ularning vazifalari",
@@ -65,6 +76,7 @@ class _LessonModulesTileState extends State<LessonModulesTile> {
                   title: "HTML5 yangi standartlari va ularning vazifalari",
                   iconPath: AppIcons.resourceIcon,
                 ),
+                const DownloadResourcesWidget(),
                 const ModuleCardQuestionsWidget(),
               ],
             ),
@@ -86,7 +98,7 @@ class _LessonModulesTileState extends State<LessonModulesTile> {
                         SvgPicture.asset(AppIcons.lockIcon),
                         customText(
                           text:
-                              "Bu mavzuni ochish uchun o’tgan mavzuni to’liq tugating!",
+                              "Bu mavzuni ochish uchun o'tgan mavzuni to'liq tugating!",
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w600,
                         ),

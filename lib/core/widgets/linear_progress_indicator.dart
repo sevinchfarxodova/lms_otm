@@ -16,7 +16,7 @@ class CustomLinearProgressIndGrad extends StatelessWidget {
           Container(
             width: 200.w,
             height: 7.h,
-            decoration: BoxDecoration(color: AppColors.lightBlueColor),
+            decoration: BoxDecoration(color: AppColors.lightMainColor),
           ),
           Container(
             width: 200.w * (progressValue / 100),

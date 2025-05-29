@@ -13,7 +13,9 @@ class ProfileHeader extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 20.r,
-            backgroundImage: const NetworkImage("https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?t=st=1746284338~exp=1746287938~hmac=458033c474d7177eaf6346992467beb99683d88cc5d2eb057dc13a8730706830&w=740"),
+            backgroundImage: const NetworkImage(
+              "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?t=st=1746284338~exp=1746287938~hmac=458033c474d7177eaf6346992467beb99683d88cc5d2eb057dc13a8730706830&w=740",
+            ),
           ),
           SizedBox(width: 12.w),
           Expanded(
@@ -23,13 +25,9 @@ class ProfileHeader extends StatelessWidget {
                 customText(
                   text: 'Salom Saidamir!',
                   fontSize: 16.sp,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w700,
                 ),
-                customText(
-                  text: 'Student ID: TTD98860',
-                  fontSize: 12.sp,
-                  textColor: Colors.grey,
-                ),
+                customText(text: 'Student ID: TTD98860', fontSize: 12.sp),
               ],
             ),
           ),

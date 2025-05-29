@@ -27,7 +27,7 @@ class SelectLanguageScreen extends StatelessWidget {
 }
 
 class _SelectLanguageView extends StatelessWidget {
-  const _SelectLanguageView({super.key});
+  const _SelectLanguageView();
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lms_test/core/utils/app_colors.dart';
 
 Widget customText({
   required String text,

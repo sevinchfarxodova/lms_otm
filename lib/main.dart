@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_test/core/routes/app_router.dart';
+import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/feature/auth/presentation/screens/login_screen.dart';
 import 'package:lms_test/feature/auth/presentation/screens/splash_screen.dart';
 import 'package:lms_test/feature/home/presentation/screens/home_screen.dart';
@@ -34,25 +35,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
-      child: MaterialApp(
-        // localizationsDelegates: context.localizationDelegates,
-        // supportedLocales: context.supportedLocales,
-        // locale: context.locale,
-        // debugShowCheckedModeBanner: false,
-        // home: SplashScreen(),
-        // home: HomeScreen(),
-        // home: LessonScheduleScreen(),
-        home: TabBarScreen(),
+      // child: MaterialApp(
+      //   // localizationsDelegates: context.localizationDelegates,
+      //   // supportedLocales: context.supportedLocales,
+      //   // locale: context.locale,
+      //   // debugShowCheckedModeBanner: false,
+      //   // home: SplashScreen(),
+      //   // home: HomeScreen(),
+      //   // home: LessonScheduleScreen(),
+      //   home: TabBarScreen(),
 
-        // home: LessonScreen(),
-      ),
-      // child: MaterialApp.router(
-      //   localizationsDelegates: context.localizationDelegates,
-      //   supportedLocales: context.supportedLocales,
-      //   locale: context.locale,
-      //   debugShowCheckedModeBanner: false,
-      //   routerConfig: _appRouter.config(),
+      //   // home: LessonScreen(),
       // ),
+      child: MaterialApp.router(
+        color: AppColors.whiteColor,
+        theme: ThemeData.light(),
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        debugShowCheckedModeBanner: false,
+        routerConfig: _appRouter.config(),
+      ),
     );
   }
 }
