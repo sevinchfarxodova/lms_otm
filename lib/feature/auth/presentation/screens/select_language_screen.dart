@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:lms_test/core/app_strigngs/app_strings.dart';
 import 'package:lms_test/core/routes/app_router.dart';
 import 'package:lms_test/core/utils/app_colors.dart';
@@ -31,91 +32,75 @@ class _SelectLanguageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LanguageCubit, String>(
-      listener: (context, state) {
-        context.setLocale(Locale(state));
+    return BlocListener<LanguageCubit, Locale>(
+      listener: (context, locale) {
+        context.setLocale(locale);
       },
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Column(
-            children: [
-              const SizedBox(height: 30),
-              SvgPicture.asset(AppIcons.languageIcon),
-              const SizedBox(height: 16),
-              customText(
-                text: "select_language".tr(),
-                fontSize: 22.sp,
-                fontWeight: FontWeight.bold,
-              ),
-              const SizedBox(height: 8),
-              customText(
-                text: "choose_your_language".tr(),
-                textColor: AppColors.greyTextColor,
-              ),
-              const SizedBox(height: 24),
+          child: BlocBuilder<LanguageCubit, Locale>(
+            builder: (context, selectedLocale) {
+              return Column(
+                children: [
+                  const SizedBox(height: 30),
+                  SvgPicture.asset(AppIcons.languageIcon),
+                  const SizedBox(height: 16),
+                  customText(
+                    text: "select_language".tr(),
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  const SizedBox(height: 8),
+                  customText(
+                    text: "choose_your_language".tr(),
+                    textColor: AppColors.greyTextColor,
+                  ),
+                  const SizedBox(height: 24),
 
-              // Language Options
-              BlocBuilder<LanguageCubit, String>(
-                builder: (context, selectedLanguage) {
-                  return Column(
+                  Column(
                     children: [
                       LanguageOption(
                         title: AppStrings.uzbekTili,
                         subtitle: AppStrings.uzbek,
                         value: 'uz',
-                        selectedValue: selectedLanguage,
+                        selectedValue: selectedLocale.languageCode,
                         flagUrl: AppIcons.uzFlagIcon,
-                        onTap:
-                            () => context.read<LanguageCubit>().changeLanguage(
-                              'uz',
-                            ),
+                        onTap: () => context.read<LanguageCubit>().changeLanguage('uz'),
                       ),
                       LanguageOption(
                         title: AppStrings.rustili,
                         subtitle: AppStrings.russian,
                         value: 'ru',
-                        selectedValue: selectedLanguage,
+                        selectedValue: selectedLocale.languageCode,
                         flagUrl: AppIcons.ruFlagIcon,
-                        onTap:
-                            () => context.read<LanguageCubit>().changeLanguage(
-                              'ru',
-                            ),
+                        onTap: () => context.read<LanguageCubit>().changeLanguage('ru'),
                       ),
                       LanguageOption(
                         title: AppStrings.inglizTili,
                         subtitle: AppStrings.english,
                         value: 'en',
-                        selectedValue: selectedLanguage,
+                        selectedValue: selectedLocale.languageCode,
                         flagUrl: AppIcons.enFlagIcon,
-                        onTap:
-                            () => context.read<LanguageCubit>().changeLanguage(
-                              'en',
-                            ),
+                        onTap: () => context.read<LanguageCubit>().changeLanguage('en'),
                       ),
                     ],
-                  );
-                },
-              ),
+                  ),
 
-              const Spacer(),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: AuthButton(
-                  title: "next".tr(),
-                  onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const OnboardingScreens(),
-                    //   ),
-                    // );
-                    context.router.push(OnboardingRoutes());
-                  },
-                ),
-              ),
-              const SizedBox(height: 30),
-            ],
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: AuthButton(
+                      title: "next".tr(),
+                      onPressed: () {
+                        context.router.push(OnboardingRoutes());
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                ],
+              );
+            },
           ),
         ),
       ),

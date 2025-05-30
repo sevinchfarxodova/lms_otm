@@ -53,14 +53,14 @@ class _UsefullSectionScreenState extends State<UsefullSectionScreen> {
                 children: [
                   customText(
                     text: 'Foydali Bo\'limlar',
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w700,
                   ),
                   customText(
                     text:
                         'Bu yerda o\'zingizga kerakli bo\'lgan ma\'lumotlarni olishingiz mumkin',
                     textColor: AppColors.greyTextColor,
-                    fontSize: 14.sp,
+                    fontSize: 16.sp,
                   ),
                   SizedBox(height: 16.h),
                   TextField(
@@ -68,6 +68,12 @@ class _UsefullSectionScreenState extends State<UsefullSectionScreen> {
                       hintText: 'Qidirish',
                       prefixIcon: Icon(Icons.search),
                       border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                        borderSide: BorderSide(
+                          color: AppColors.greyTextColor.withOpacity(0.23),
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.r),
                         borderSide: BorderSide(
                           color: AppColors.greyTextColor.withOpacity(0.23),

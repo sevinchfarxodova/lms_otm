@@ -3,12 +3,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_test/core/routes/app_router.dart';
+import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/app_images.dart';
-import 'package:lms_test/feature/auth/presentation/screens/login_screen.dart';
+import 'package:lms_test/core/utils/custom_text.dart';
 import 'package:lms_test/feature/auth/presentation/widgets/auth_button.dart';
 import 'package:lms_test/feature/auth/presentation/widgets/boarding_widget.dart';
-
-import '../../../../core/utils/app_colors.dart';
 
 @RoutePage()
 class OnboardingScreens extends StatefulWidget {
@@ -42,6 +41,7 @@ class OnboardingScreensState extends State<OnboardingScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         child: SafeArea(
@@ -83,27 +83,18 @@ class OnboardingScreensState extends State<OnboardingScreens> {
                     );
                   }
                   if (_currentPage == mainTexts.length - 1) {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => SelectUniversityScreen(),
-                    //   ),
-                    // );
-                    context.router.push(LoginRoute());
+                    context.router.replace(LoginRoute());
                   }
                 },
               ),
-              SizedBox(height: 4.h),
               TextButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
-                  );
+                  context.router.replace(LoginRoute());
                 },
-                child: Text(
-                  "skip".tr(),
-                  style: TextStyle(fontSize: 12, color: AppColors.mainColor),
+                child: customText(
+                  text: "skip".tr(),
+                  textColor: AppColors.mainColor,
+                  fontSize: 15.sp,
                 ),
               ),
             ],
@@ -116,14 +107,14 @@ class OnboardingScreensState extends State<OnboardingScreens> {
   Widget _buildDot(int index) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 5.h),
-      width: _currentPage == index ? 32.w : 8.h,
-      height: 8.h,
+      width: _currentPage == index ? 16.w : 6.h,
+      height: 6.h,
       decoration: BoxDecoration(
         color:
             _currentPage == index
                 ? AppColors.mainColor
                 : AppColors.greyTextColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.r),
       ),
     );
   }

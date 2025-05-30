@@ -20,6 +20,7 @@
     "enter_password": "Enter password",
     "remember": "Remember",
     "forget_password": "Forgot password?",
-    "login": "Login"
+    "login": "Login",
+    "select_university_snackbar": "Please select a university first"
   }
   

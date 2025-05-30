@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:lms_test/core/utils/app_colors.dart';
+import 'package:lms_test/core/utils/app_icons.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
 
 class ProfileHeader extends StatelessWidget {
@@ -24,27 +27,46 @@ class ProfileHeader extends StatelessWidget {
               children: [
                 customText(
                   text: 'Salom Saidamir!',
-                  fontSize: 16.sp,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.w700,
                 ),
-                customText(text: 'Student ID: TTD98860', fontSize: 12.sp),
+                customText(text: 'Student ID: TTD98860', fontSize: 14.sp),
               ],
             ),
           ),
-          Container(
-            padding: EdgeInsets.all(2.r),
-            decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(10.r),
-            ),
-            child: customText(
-              text: '2',
-              textColor: Colors.white,
-              fontSize: 10.sp,
-            ),
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              SvgPicture.asset(
+                AppIcons.notificationIcon,
+                width: 24.w,
+                height: 24.h,
+              ),
+              Positioned(
+                left: -8.w,
+                bottom: 0,
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 4.w,
+                    vertical: 1.5.h,
+                  ),
+                  decoration: const BoxDecoration(
+                    color: Colors.red,
+                    shape: BoxShape.circle,
+                  ),
+                  constraints: BoxConstraints(minWidth: 16.w, minHeight: 16.h),
+                  child: Center(
+                    child: customText(
+                      text: '13',
+                      textColor: AppColors.whiteColor,
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-          SizedBox(width: 6.w),
-          Icon(Icons.notifications_outlined, size: 24.r),
         ],
       ),
     );

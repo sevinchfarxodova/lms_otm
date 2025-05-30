@@ -17,7 +17,7 @@ class AuthButton extends StatelessWidget {
       child: FilledButton(
         style: FilledButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(37.r),
           ),
           backgroundColor: AppColors.mainColor,
         ),
@@ -25,7 +25,7 @@ class AuthButton extends StatelessWidget {
         child: customText(
           text: title,
           textColor: AppColors.whiteColor,
-          fontSize: 12.sp,
+          fontSize: 15.sp,
         ),
       ),
     );

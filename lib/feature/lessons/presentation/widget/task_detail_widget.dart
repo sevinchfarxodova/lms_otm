@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
 import 'package:lms_test/feature/home/presentation/widgets/notice_container.dart';
 import 'package:lms_test/feature/lessons/presentation/widget/score_widget.dart';
@@ -29,6 +30,7 @@ class TaskDetailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: AppColors.whiteColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
       child: Padding(
         padding: EdgeInsets.all(10.r),
@@ -40,7 +42,7 @@ class TaskDetailWidget extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      customText(text: title, fontSize: 14.sp),
+                      customText(text: title, fontSize: 16.sp),
 
                       SizedBox(height: 7.h),
                       NoticeContainer(
@@ -58,14 +60,14 @@ class TaskDetailWidget extends StatelessWidget {
                     SizedBox(height: 20.h),
                     customText(
                       text: taskType,
-                      fontSize: 10.sp,
+                      fontSize: 12.sp,
                       textColor: Colors.grey.shade600,
                     ),
 
                     SizedBox(height: 4.h),
                     customText(
                       text: time,
-                      fontSize: 12.sp,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ],

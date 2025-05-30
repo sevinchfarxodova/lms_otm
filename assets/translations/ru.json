@@ -19,6 +19,7 @@
     "enter_id": "Введите ваш студенческий ID",
     "enter_password": "Введите пароль",
     "remember": "Запомнить",
-    "remember_password": "Забыли пароль?",
-    "login": "Войти"
+    "forget_password": "Забыли пароль?",
+    "login": "Войти",
+    "select_university_snackbar": "Пожалуйста, сначала выберите университет"
 }

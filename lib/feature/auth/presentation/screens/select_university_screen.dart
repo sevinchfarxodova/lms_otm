@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart' show AutoRouterX, RoutePage;
-import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart' as easy_localization;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_test/core/routes/app_router.dart';
@@ -16,11 +16,22 @@ class SelectUniversityScreen extends StatefulWidget {
 
 class _SelectUniversityScreenState extends State<SelectUniversityScreen> {
   final TextEditingController _searchController = TextEditingController();
-  final List<String> _allUniversities = List.generate(
-    10,
-    (_) => "Toshkent Davlat Pediatriya instituti",
+  final ValueNotifier<String?> selectedUniversity = ValueNotifier<String?>(
+    null,
   );
   List<String> _filteredUniversities = [];
+  final List<String> _allUniversities = [
+    "Toshkent Davlat Pediatriya Instituti",
+    "Toshkent Davlat Texnika Universiteti",
+    "Toshkent Axborot Texnologiyalari Universiteti",
+    "O'zbekiston Milliy Universiteti",
+    "Toshkent Tibbiyot Akademiyasi",
+    "Toshkent Davlat Yuridik Universiteti",
+    "Toshkent Moliya Instituti",
+    "Toshkent Arxitektura-Qurilish Instituti",
+    "Toshkent Davlat Iqtisodiyot Universiteti",
+    "Toshkent Kimyo-Texnologiya Instituti",
+  ];
 
   @override
   void initState() {
@@ -42,6 +53,7 @@ class _SelectUniversityScreenState extends State<SelectUniversityScreen> {
   @override
   void dispose() {
     _searchController.dispose();
+    selectedUniversity.dispose();
     super.dispose();
   }
 
@@ -51,33 +63,43 @@ class _SelectUniversityScreenState extends State<SelectUniversityScreen> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 24),
+              SizedBox(height: 24.h),
               const Icon(Icons.apartment, size: 64, color: Colors.blue),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
               customText(
-                text: "select_university".tr(),
+                text: easy_localization.tr('select_university'),
                 fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               customText(
-                text: "select_your_university".tr(),
+                text: easy_localization.tr('select_your_university'),
                 textAlign: TextAlign.center,
                 textColor: AppColors.greyTextColor,
+                fontSize: 14.sp,
               ),
-              const SizedBox(height: 24),
+              SizedBox(height: 24.h),
               TextField(
                 controller: _searchController,
+                style: TextStyle(color: AppColors.mainColor),
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.search),
-                  hintText: "search".tr(),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: Colors.blue),
+                  prefixIcon: const Icon(
+                    Icons.search,
+                    color: AppColors.mainColor,
+                  ),
+                  hintStyle: TextStyle(color: AppColors.mainColor),
+                  hintText: easy_localization.tr('search'),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                    borderSide: BorderSide(color: AppColors.mainColor),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                    borderSide: BorderSide(color: AppColors.mainColor),
                   ),
                 ),
               ),
@@ -85,23 +107,57 @@ class _SelectUniversityScreenState extends State<SelectUniversityScreen> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: customText(
-                  text: "all_universities".tr(),
+                  text: easy_localization.tr('all_universities'),
                   textColor: AppColors.greyTextColor,
+                  fontSize: 14.sp,
                 ),
               ),
               const SizedBox(height: 8),
               Expanded(
-                child: ListView.builder(
-                  itemCount: _filteredUniversities.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: const EdgeInsets.symmetric(vertical: 4),
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade100,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(_filteredUniversities[index]),
+                child: ValueListenableBuilder<String?>(
+                  valueListenable: selectedUniversity,
+                  builder: (context, selected, _) {
+                    return ListView.builder(
+                      itemCount: _filteredUniversities.length,
+
+                      itemBuilder: (context, index) {
+                        final university = _filteredUniversities[index];
+                        final isSelected =
+                            _filteredUniversities[index] == selected;
+                        return GestureDetector(
+                          onTap: () {
+                            selectedUniversity.value = university;
+                          },
+                          child: Container(
+                            margin: EdgeInsets.symmetric(vertical: 4.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 16.w,
+                              vertical: 10.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade100,
+                              borderRadius: BorderRadius.circular(12.r),
+                              border: Border.all(
+                                color:
+                                    isSelected
+                                        ? AppColors.mainColor
+                                        : Colors.transparent,
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                Expanded(child: customText(text: university)),
+                                if (isSelected)
+                                  const Icon(
+                                    Icons.check_circle_outline_rounded,
+                                    color: AppColors.mainColor,
+                                  ),
+                                if (isSelected) SizedBox(width: 8.w),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                     );
                   },
                 ),
@@ -110,16 +166,27 @@ class _SelectUniversityScreenState extends State<SelectUniversityScreen> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blue,
-        child: const Icon(Icons.arrow_forward),
-        onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => LoginScreen()),
-          // );
-          context.router.push(MainRoute());
-        },
+      floatingActionButton: SizedBox(
+        width: 50.w,
+        height: 50.h,
+        child: FloatingActionButton(
+          backgroundColor: AppColors.mainColor,
+          shape: CircleBorder(),
+          child: const Icon(Icons.arrow_forward, color: AppColors.whiteColor),
+          onPressed: () {
+            if (selectedUniversity.value != null &&
+                selectedUniversity.value!.isNotEmpty) {
+              context.router.replace(MainRoute());
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  backgroundColor: AppColors.redColor,
+                  content: customText(text: "select_university_snackbar".tr()),
+                ),
+              );
+            }
+          },
+        ),
       ),
     );
   }

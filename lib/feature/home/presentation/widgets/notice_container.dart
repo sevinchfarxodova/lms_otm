@@ -31,7 +31,7 @@ class NoticeContainer extends StatelessWidget {
         children: [
           SvgPicture.asset(badgeIconUrl),
           SizedBox(width: 4.w),
-          customText(text: badgeText, fontSize: 10.sp, textColor: badgeColor),
+          customText(text: badgeText, fontSize: 12.sp, textColor: badgeColor),
         ],
       ),
     );

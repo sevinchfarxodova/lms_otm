@@ -2,10 +2,11 @@ import 'package:auto_route/auto_route.dart' show AutoRouterX, RoutePage;
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:lms_test/core/routes/app_router.dart';
 import 'package:lms_test/core/utils/app_colors.dart';
+import 'package:lms_test/core/utils/app_icons.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
-// import '../widgets/auth_checkbox.dart';
 
 @RoutePage()
 class LoginScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController idController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   // bool _rememberMe = false;
-  // bool _obscureText = true;
+  bool _obscureText = true;
   bool eye = true;
 
   @override
@@ -51,9 +52,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextField(
                           controller: idController,
                           decoration: InputDecoration(
-                            prefixIcon: Icon(
-                              Icons.person_outline,
-                              color: AppColors.mainColor,
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 15.w,
+                              vertical: 15.h,
+                            ),
+                            prefixIconConstraints: BoxConstraints(),
+                            prefixIcon: SvgPicture.asset(
+                              AppIcons.teacherIcon,
+                              width: 26.w,
+                              height: 26.w,
                             ),
                             hintText: 'enter_id'.tr(),
                             hintStyle: TextStyle(
@@ -66,20 +73,35 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         TextField(
                           controller: passwordController,
-                          obscureText: true,
+                          obscureText: _obscureText,
                           decoration: InputDecoration(
-                            prefixIcon: Icon(
-                              Icons.lock_outline,
-                              color: AppColors.mainColor,
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 15.w,
+                              vertical: 15.h,
+                            ),
+                            prefixIconConstraints: BoxConstraints(),
+                            prefixIcon: SvgPicture.asset(
+                              AppIcons.lockIcon,
+                              width: 26.w,
+                              height: 26.w,
                             ),
                             hintText: 'enter_password'.tr(),
                             hintStyle: TextStyle(
                               color: AppColors.greyTextColor,
                             ),
                             border: InputBorder.none,
-                            suffixIcon: Icon(
-                              Icons.remove_red_eye_outlined,
-                              color: Colors.grey,
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _obscureText
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: Colors.grey,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _obscureText = !_obscureText;
+                                });
+                              },
                             ),
                           ),
                         ),
@@ -87,18 +109,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      _remember(),
-                      TextButton(
-                        onPressed: () {},
-                        child: customText(
-                          text: 'forget_password'.tr(),
-                          textColor: AppColors.whiteColor,
-                        ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: customText(
+                        text: 'forget_password'.tr(),
+                        textColor: AppColors.whiteColor,
                       ),
-                    ],
+                    ),
                   ),
                   SizedBox(height: 50.h),
                   _enterButton(),
@@ -111,30 +130,10 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _remember() {
-    return Row(
-      children: [
-        // AuthCheckboxWg(
-        //   rememberMe: _rememberMe,
-        //   onChanged: (value) {
-        //     setState(() {
-        //       _rememberMe = value!;
-        //     });
-        //   },
-        // ),
-        customText(text: 'remember'.tr(), textColor: AppColors.whiteColor),
-      ],
-    );
-  }
-
   Widget _enterButton() {
     return ElevatedButton(
       onPressed: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => HomeScreen()),
-        // );
-        context.router.push(SelectUniversityRoute());
+        context.router.replace(SelectUniversityRoute());
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.whiteColor,

@@ -4,17 +4,12 @@ import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
 
 class ScoreDescriptionWidget extends StatelessWidget {
-  const ScoreDescriptionWidget({
-    super.key,
-  });
+  const ScoreDescriptionWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 12.w,
-        vertical: 2.h,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 2.h),
       decoration: BoxDecoration(
         color: AppColors.lightGreenColor,
         borderRadius: BorderRadius.circular(7.r),
@@ -30,7 +25,7 @@ class ScoreDescriptionWidget extends StatelessWidget {
           customText(
             text: "Qoniqarli",
             textColor: AppColors.greenColor,
-            fontSize: 12,
+            fontSize: 14,
           ),
         ],
       ),

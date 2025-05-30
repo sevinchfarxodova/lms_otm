@@ -9,8 +9,8 @@ import 'package:lms_test/feature/profile/presentation/widgets/profile_item_widge
 @RoutePage()
 class ProfileScreen extends StatelessWidget {
   final List<Map<String, dynamic>> menuItems = [
-    {'icon': Icons.settings, 'text': "Ma'lumotlarni o‘zgartirish"},
-    {'icon': Icons.calendar_today, 'text': "Semester"},
+    {'icon': Icons.settings_outlined, 'text': "Ma'lumotlarni o‘zgartirish"},
+    {'icon': Icons.access_time, 'text': "Semester"},
     {'icon': Icons.language, 'text': "Tilni o‘zgartirish"},
     {'icon': Icons.brightness_2, 'text': "Dizayn"},
     {'icon': Icons.info_outline, 'text': "Ilova haqida"},
@@ -22,14 +22,14 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-
+      backgroundColor: AppColors.whiteColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 10.h),
               customText(
                 text: "Profile bo'limi",
                 fontWeight: FontWeight.w700,
@@ -37,6 +37,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               const Divider(),
               const ProfileHeader(),
+              SizedBox(height: 5.h),
               customText(
                 text:
                     "Muhammad al-Xorazmiy nomidagi Toshkent axborot texnalogiyalari universiteti\n028-21 SKIo' guruh 3-kurs talabasi",
