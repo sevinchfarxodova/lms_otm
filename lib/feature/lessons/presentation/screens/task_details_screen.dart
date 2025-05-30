@@ -24,17 +24,18 @@ class TaskDetailsScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TaskDetailWidget(
-            title: "nimadir",
-            subtitle: "nimadir",
-            taskType: "nimadir",
+            title: "1-amaliy ish",
+            subtitle: "Amaliy ish",
+            taskType: "Amaliy ish",
             badgeText: "2 kun qoldi",
             badgeColor: AppColors.redColor,
             badgeBackgroundColor: AppColors.lightRedColor,
             badgeIconUrl: AppIcons.warningIcon,
-            time: "23950645654645",
+            time: "25.04.2025   12:55",
           ),
 
           Card(
+            color: AppColors.whiteColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.r),
             ),
@@ -47,8 +48,8 @@ class TaskDetailsScreen extends StatelessWidget {
                 children: [
                   customText(
                     text: "Ma'lumot",
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w700,
                   ),
                   Card(
                     color: AppColors.lightMainColor,
@@ -56,18 +57,18 @@ class TaskDetailsScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12.r),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10.w),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           customText(
                             text: "O'qituvchi izohi",
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            textColor: AppColors.blueColor,
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w700,
+                            textColor: AppColors.mainColor,
                           ),
                           customText(
-                            fontSize: 12.sp,
+                            fontSize: 14.sp,
                             text:
                                 "Topshiriq 20.04.2025 gacha prezentatsiya qilinmasa 50% ball olib tashlanadi",
                           ),
@@ -83,7 +84,7 @@ class TaskDetailsScreen extends StatelessWidget {
                       customText(
                         text: "Namuna\n 14KB",
                         textColor: AppColors.blueColor,
-                        fontSize: 10.sp,
+                        fontSize: 11.sp,
                         fontWeight: FontWeight.w400,
                       ),
                       Spacer(),
@@ -91,7 +92,7 @@ class TaskDetailsScreen extends StatelessWidget {
                       customText(
                         text: "Yuklash",
                         textColor: AppColors.blueColor,
-                        fontSize: 10.sp,
+                        fontSize: 11.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ],
@@ -101,6 +102,7 @@ class TaskDetailsScreen extends StatelessWidget {
             ),
           ),
           Card(
+            color: AppColors.whiteColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.r),
             ),
@@ -115,12 +117,13 @@ class TaskDetailsScreen extends StatelessWidget {
                     children: [
                       customText(
                         text: 'Yuklangan topshiriqlar',
-                        fontSize: 16.sp,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w600,
                       ),
                       customText(
                         text: 'Urinishlar soni \n     2/20',
                         textColor: AppColors.blueColor,
+                        fontSize: 14.sp,
                       ),
                     ],
                   ),
@@ -144,7 +147,7 @@ class TaskDetailsScreen extends StatelessWidget {
                             Image.asset(AppImages.topshiriqYuklanmaganImage),
                             customText(
                               text: "Topshiriq yuklanmagan",
-                              fontWeight: FontWeight.w400,
+                              fontSize: 14.sp,
                             ),
                           ],
                         ),

@@ -17,20 +17,20 @@ class ModuleCardQuestionsWidget extends StatelessWidget {
         Divider(),
         customText(
           text: "20 ta test savollar",
-          fontSize: 10.sp,
+          fontSize: 12.sp,
           textColor: AppColors.greyTextColor,
         ),
         Row(
           children: [
             SvgPicture.asset(AppIcons.questonsIcon),
-            const SizedBox(width: 12),
-            customText(text: "Test Savollari"),
+            SizedBox(width: 12.w),
+            customText(text: "Test Savollari", fontSize: 14.sp),
             const Spacer(),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.mainColor,
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 7.h),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.r),
                 ),

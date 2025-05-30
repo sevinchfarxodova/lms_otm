@@ -29,6 +29,7 @@ class TasksScreen extends StatelessWidget {
                   showModalBottomSheet(
                     context: context,
                     isScrollControlled: true,
+                    
                     backgroundColor: AppColors.whiteColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.vertical(
@@ -37,6 +38,29 @@ class TasksScreen extends StatelessWidget {
                     ),
                     builder: (context) {
                       return DraggableScrollableSheet(
+                        snapAnimationDuration: Duration(seconds: 5),
+                        expand: false,
+                        initialChildSize: 0.8,
+                        maxChildSize: 1.0,
+                        minChildSize: 0.25,
+                        builder: (_, controller) {
+                          return TaskDetailsScreen();
+                        },
+                      );
+                    },
+                  );showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    
+                    backgroundColor: AppColors.whiteColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(20),
+                      ),
+                    ),
+                    builder: (context) {
+                      return DraggableScrollableSheet(
+                        snapAnimationDuration: Duration(seconds: 5),
                         expand: false,
                         initialChildSize: 0.8,
                         maxChildSize: 1.0,

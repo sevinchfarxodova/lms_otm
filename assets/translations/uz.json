@@ -19,6 +19,7 @@
     "enter_id": "Talaba ID yingizni kiriting",
     "enter_password": "Parolni kiriting",
     "remember": "Eslab qolish",
-    "remember_password": "Parolni unutmadingizmi?",
-    "login": "Login"
+    "forget_password": "Parolni unutdingizmi?",
+    "login": "Kirish",
+    "select_university_snackbar": "Iltimos, avval universitetni tanlang"
 }

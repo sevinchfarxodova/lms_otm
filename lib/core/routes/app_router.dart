@@ -17,8 +17,8 @@ import 'package:lms_test/feature/lessons/presentation/screens/tab_bar_screen.dar
 import 'package:lms_test/feature/lessons/presentation/screens/video_lesson_screen.dart';
 import 'package:lms_test/feature/profile/presentation/screens/profile_screen.dart';
 import 'package:lms_test/feature/profile/presentation/screens/profile_navigation_screen.dart';
-import 'package:lms_test/feature/performance/presentation/screens/usefull_section_navigation_screen.dart';
-import 'package:lms_test/feature/performance/presentation/screens/usefull_section_screen.dart';
+import 'package:lms_test/feature/useful_section/presentation/screens/usefull_section_navigation_screen.dart';
+import 'package:lms_test/feature/useful_section/presentation/screens/usefull_section_screen.dart';
 
 part 'app_router.gr.dart';
 

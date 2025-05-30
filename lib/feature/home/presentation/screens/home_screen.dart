@@ -7,6 +7,7 @@ import 'package:lms_test/core/utils/app_icons.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
 import 'package:lms_test/feature/home/presentation/widgets/assigemensts_section.dart';
 import 'package:lms_test/feature/home/presentation/widgets/current_activity_section.dart';
+import 'package:lms_test/feature/home/presentation/widgets/custom_circ_prog_ind_perf_widget.dart';
 import 'package:lms_test/feature/home/presentation/widgets/divider_container.dart';
 import 'package:lms_test/feature/home/presentation/widgets/empty_task_widget.dart';
 import 'package:lms_test/feature/home/presentation/widgets/profile_widget.dart';
@@ -34,6 +35,52 @@ class HomeScreen extends StatelessWidget {
                 const ProfileHeader(),
                 if (!isEmpty) const VideoLessonSection(),
                 if (!isEmpty) const CurrentActivitySection(),
+
+                Padding(
+                  padding: EdgeInsets.only(top: 15.h),
+                  child: customText(
+                    text: 'O\'zlashtirish',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                    textColor: Colors.blue,
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 15.h),
+                  decoration: AppDecorations.tasksCard,
+                  padding: EdgeInsets.symmetric(
+                    vertical: 10.h,
+                    horizontal: 5.w,
+                  ),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomCircProgIndPerfWidget(
+                          percentage: 75,
+                          label: "Ma'lumotlar tahlili",
+                        ),
+                        CustomCircProgIndPerfWidget(
+                          percentage: 55,
+                          label: "Dasturlash C++ tili",
+                        ),
+                        CustomCircProgIndPerfWidget(
+                          percentage: 65,
+                          label: "Ekologiya",
+                        ),
+                        CustomCircProgIndPerfWidget(
+                          percentage: 37,
+                          label: "Operatsion tizimlar",
+                        ),
+                        CustomCircProgIndPerfWidget(
+                          percentage: 75,
+                          label: "Ma'lumotlar tahlili",
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 Padding(
                   padding: EdgeInsets.only(top: 15.h),
                   child: customText(

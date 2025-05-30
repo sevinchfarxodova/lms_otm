@@ -15,8 +15,8 @@ class ResultsScreen extends StatelessWidget {
       children: [
         customText(
           text: ' Natija',
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w600,
+          fontSize: 18.sp,
+          fontWeight: FontWeight.w700,
         ),
         SizedBox(height: 10.h),
         Card(
@@ -39,11 +39,11 @@ class ResultsScreen extends StatelessWidget {
                       children: [
                         customText(
                           text: "Ma'lumotlar Tahlili",
-                          fontSize: 16.sp,
+                          fontSize: 18.sp,
                         ),
                         customText(
                           text: "Majburiy | 120 soat | 4 kredit",
-                          fontSize: 12.sp,
+                          fontSize: 14.sp,
                           textColor: AppColors.greyTextColor,
                         ),
                       ],
@@ -57,10 +57,11 @@ class ResultsScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 children: [
                   SizedBox(
-                    width: 120.w,
+                    width: 130.w,
                     height: 120.h,
                     child: CircularProgressIndicator(
                       value: 22 / 26,
+                      strokeCap: StrokeCap.round,
                       strokeWidth: 15,
                       backgroundColor: AppColors.greyTextColor.withOpacity(0.5),
                       valueColor: AlwaysStoppedAnimation(
@@ -69,7 +70,7 @@ class ResultsScreen extends StatelessWidget {
                         // ).createShader(
                         //   Rect.fromCircle(center: Offset(0, 0), radius: 60),
                         // ),
-                        AppColors.greenColor,
+                        AppColors.mainColor,
                       ),
                     ),
                   ),
@@ -131,7 +132,14 @@ class ResultsScreen extends StatelessWidget {
                         width: 270.w,
                         child: TabBarView(
                           children: [
-                            Center(child: Text("Joriy natijalar yo'q")),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ScoreWidget(scoreText: "0", text: "Max"),
+                                ScoreWidget(scoreText: "0", text: "Max Ball"),
+                                ScoreWidget(scoreText: "0 %", text: "Natija"),
+                              ],
+                            ),
 
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -142,7 +150,14 @@ class ResultsScreen extends StatelessWidget {
                               ],
                             ),
 
-                            Center(child: Text("Yakuniy natijalar hali yo'q")),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ScoreWidget(scoreText: "0", text: "Max"),
+                                ScoreWidget(scoreText: "0", text: "Max Ball"),
+                                ScoreWidget(scoreText: "0 %", text: "Natija"),
+                              ],
+                            ),
                           ],
                         ),
                       ),

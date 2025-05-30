@@ -42,8 +42,16 @@ class _LessonModulesTileState extends State<LessonModulesTile> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      customText(text: "1-Mavzu"),
-                      customText(text: "Malumotlar bazasiga kirish SQL "),
+                      customText(
+                        text: "1-Mavzu",
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      customText(
+                        text: "Malumotlar bazasiga kirish SQL ",
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ],
                   ),
                   Spacer(),
@@ -99,7 +107,7 @@ class _LessonModulesTileState extends State<LessonModulesTile> {
                         customText(
                           text:
                               "Bu mavzuni ochish uchun o'tgan mavzuni to'liq tugating!",
-                          fontSize: 10.sp,
+                          fontSize: 11.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ],

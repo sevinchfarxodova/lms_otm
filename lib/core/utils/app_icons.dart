@@ -35,4 +35,6 @@ class AppIcons {
   static const String downloadFromIcon = "$_baseIconUrl/download_from.svg";
   static const String usefullIcon = "$_baseIconUrl/usefull.svg";
   static const String sendIcon = "$_baseIconUrl/send.svg";
+  static const String teacherIcon = "$_baseIconUrl/teacher.svg";
+  static const String notificationIcon = "$_baseIconUrl/notification.svg";
 }

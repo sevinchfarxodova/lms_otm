@@ -24,7 +24,6 @@ class ModuleCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      spacing: 6.w,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -32,19 +31,20 @@ class ModuleCardItem extends StatelessWidget {
             ? SvgPicture.asset(iconPath!)
             : isWatched!
             ? const VideoPlayButton()
-            : const VideoPlayButton(),
+            : const VideoPlayedButton(),
+        SizedBox(width: 3.w),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             customText(
               text: title,
-              fontSize: 10.sp,
+              fontSize: 12.sp,
               fontWeight: FontWeight.w400,
             ),
             time != null
                 ? customText(
                   text: time!,
-                  fontSize: 10.sp,
+                  fontSize: 12.sp,
                   textColor: AppColors.greyTextColor,
                 )
                 : SizedBox.shrink(),
@@ -56,7 +56,7 @@ class ModuleCardItem extends StatelessWidget {
             SvgPicture.asset(AppIcons.downloadIcon, color: AppColors.mainColor),
             customText(
               text: "8,5 mb",
-              fontSize: 10.sp,
+              fontSize: 11.sp,
               textColor: AppColors.blueColor,
             ),
           ],

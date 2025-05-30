@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_test/core/routes/app_router.dart';
 import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
+import 'package:lms_test/core/widgets/custom_app_bar.dart';
 import 'package:lms_test/feature/lessons/presentation/widget/lesson_item_card.dart';
 
 @RoutePage()
@@ -64,13 +65,8 @@ class LessonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: customText(
-          text: 'FANLAR',
-          fontSize: 20.sp,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
+      backgroundColor: AppColors.whiteColor,
+      appBar: CustomAppBar(title: "Fanlar"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
         child: Column(
