@@ -44,18 +44,22 @@ class _LessonModulesTileState extends State<LessonModulesTile> {
                     children: [
                       customText(
                         text: "1-Mavzu",
-                        fontSize: 14.sp,
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w700,
                       ),
                       customText(
                         text: "Malumotlar bazasiga kirish SQL ",
-                        fontSize: 14.sp,
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w700,
                       ),
                     ],
                   ),
                   Spacer(),
-                  CustomCircularProgressIndicatorGrad(progressValue: 90),
+                  CustomCircularProgressIndicatorGrad(
+                    scoreProgress: 76,
+                    size: 45,
+                    strokeWidth: 7,
+                  ),
                 ],
               ),
               onExpansionChanged: (bool expanded) {

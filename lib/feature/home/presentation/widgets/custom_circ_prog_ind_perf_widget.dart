@@ -18,34 +18,41 @@ class CustomCircProgIndPerfWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(right: 10.w),
       child: Column(
-        mainAxisSize: MainAxisSize.max,
+        mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(height: 5.h),
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              SizedBox(
-                width: 55.w,
-                height: 50.h,
-                child: CircularProgressIndicator(
-                  
-                  strokeCap: StrokeCap.round,
-                  value: percentage / 100,
-                  strokeWidth: 6,
-                  backgroundColor: Colors.grey.shade300,
-                  valueColor: AlwaysStoppedAnimation<Color>(
-                    getLessonItemColorByScore(percentage),
+          SizedBox(
+            height: 50.h,
+            width: 50.w,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 25.r,
+                  backgroundColor: Colors.transparent,
+                  child: CircularProgressIndicator(
+                    constraints: BoxConstraints.expand(),
+                    strokeCap: StrokeCap.round,
+                    value: percentage / 100,
+                    strokeWidth: 6,
+                    backgroundColor: Colors.grey.shade300,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      getLessonItemColorByScore(percentage),
+                    ),
                   ),
                 ),
-              ),
-              customText(
-                text: '${percentage.toInt()}%',
-                fontWeight: FontWeight.w600,
-                fontSize: 16.sp,
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: customText(
+                    text: '${percentage.toInt()}%',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16.sp,
+                  ),
+                ),
+              ],
+            ),
           ),
-          SizedBox(height: 8.h),
+          SizedBox(height: 6.h),
           SizedBox(
             width: 70.w,
             child: customText(

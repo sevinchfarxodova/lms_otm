@@ -48,14 +48,11 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: 15.h),
                   decoration: AppDecorations.tasksCard,
-                  padding: EdgeInsets.symmetric(
-                    vertical: 10.h,
-                    horizontal: 5.w,
-                  ),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 5.w),
+                  child: SizedBox(
+                    height: 100.h,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
                       children: [
                         CustomCircProgIndPerfWidget(
                           percentage: 75,
@@ -81,14 +78,11 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15.h),
-                  child: customText(
-                    text: 'Semester topshiriqlari statusi',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w500,
-                    textColor: Colors.blue,
-                  ),
+                customText(
+                  text: 'Semester topshiriqlari statusi',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  textColor: Colors.blue,
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 15.h),

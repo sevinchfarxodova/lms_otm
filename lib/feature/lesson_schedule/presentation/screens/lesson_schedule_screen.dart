@@ -22,7 +22,7 @@ class LessonScheduleScreen extends StatelessWidget {
         backgroundColor: AppColors.whiteColor,
         appBar: CustomAppBar(title: "Dars jadvali"),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 10.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.sp),
           child: Column(
             children: [
               const DateHeader(),
@@ -40,7 +40,7 @@ class LessonScheduleScreen extends StatelessWidget {
                       initialDisplayDate: date,
                       dataSource: LessonDataSource(getLessons(date)),
                       timeSlotViewSettings: TimeSlotViewSettings(
-                        timeIntervalHeight: 31.h,
+                        timeIntervalHeight: 35,
                         timeFormat: 'HH:mm',
                         startHour: 8.5,
                         endHour: 20.5,

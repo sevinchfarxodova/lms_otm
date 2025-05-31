@@ -11,8 +11,8 @@ class ProfileScreen extends StatelessWidget {
   final List<Map<String, dynamic>> menuItems = [
     {'icon': Icons.settings_outlined, 'text': "Ma'lumotlarni o‘zgartirish"},
     {'icon': Icons.access_time, 'text': "Semester"},
-    {'icon': Icons.language, 'text': "Tilni o‘zgartirish"},
-    {'icon': Icons.brightness_2, 'text': "Dizayn"},
+    {'icon': Icons.language, 'text': "Tilni o'zgartirish"},
+    {'icon': Icons.brightness_2_outlined, 'text': "Dizayn"},
     {'icon': Icons.info_outline, 'text': "Ilova haqida"},
     {'icon': Icons.logout, 'text': "Chiqish"},
   ];

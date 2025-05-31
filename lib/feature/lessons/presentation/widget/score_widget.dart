@@ -11,7 +11,7 @@ class ScoreWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 75.h,
+      // height: 75.h,
       width: 80.w,
       child: Card(
         color: AppColors.lightMainColor,
