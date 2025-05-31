@@ -9,7 +9,7 @@ class ScoreDescriptionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 2.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 3.h),
       decoration: BoxDecoration(
         color: AppColors.lightGreenColor,
         borderRadius: BorderRadius.circular(7.r),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_test/core/utils/app_colors.dart';
 import 'package:lms_test/core/utils/custom_text.dart';
+import 'package:lms_test/core/widgets/custom_app_bar.dart';
 
 @RoutePage()
 class UsefullSectionScreen extends StatefulWidget {
@@ -41,28 +42,24 @@ class _UsefullSectionScreenState extends State<UsefullSectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(title: "Foydali Bo\'limlar"),
       backgroundColor: AppColors.whiteColor,
       body: SafeArea(
         child: Column(
           children: [
             // Title
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 5.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  customText(
-                    text: 'Foydali Bo\'limlar',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w700,
-                  ),
                   customText(
                     text:
                         'Bu yerda o\'zingizga kerakli bo\'lgan ma\'lumotlarni olishingiz mumkin',
                     textColor: AppColors.greyTextColor,
                     fontSize: 16.sp,
                   ),
-                  SizedBox(height: 16.h),
+                  SizedBox(height: 10.h),
                   TextField(
                     decoration: InputDecoration(
                       hintText: 'Qidirish',
@@ -98,7 +95,7 @@ class _UsefullSectionScreenState extends State<UsefullSectionScreen> {
                 itemBuilder: (context, pageIndex) {
                   final items = pages[pageIndex];
                   return Padding(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: EdgeInsets.all(10.w),
                     child: GridView.count(
                       crossAxisCount: 3,
                       crossAxisSpacing: 10,
@@ -139,7 +136,7 @@ class _UsefullSectionScreenState extends State<UsefullSectionScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(pages.length, (index) {
                 return Container(
-                  margin: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+                  margin: EdgeInsets.only(left: 4.w, right: 4.w, bottom: 4.h),
                   width: _currentPage == index ? 10 : 6,
                   height: _currentPage == index ? 10 : 6,
                   decoration: BoxDecoration(

@@ -118,58 +118,83 @@ class _VideoLessonScreenState extends State<VideoLessonScreen>
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       appBar: CustomAppBar(title: "Ma'lumotlar tahlili"),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 16.w),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12.r),
-
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 8,
-                  offset: Offset(0, 4),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 16.w),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12.r),
+            
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12.r),
+                child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child:
+                      chewieController != null &&
+                              chewieController!
+                                  .videoPlayerController
+                                  .value
+                                  .isInitialized
+                          ? Chewie(controller: chewieController!)
+                          : Center(child: CircularProgressIndicator()),
                 ),
-              ],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12.r),
-              child: AspectRatio(
-                aspectRatio: 16 / 9,
-                child:
-                    chewieController != null &&
-                            chewieController!
-                                .videoPlayerController
-                                .value
-                                .isInitialized
-                        ? Chewie(controller: chewieController!)
-                        : Center(child: CircularProgressIndicator()),
               ),
             ),
-          ),
-          SizedBox(height: 5.h),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: customText(
-              text: "1-mavzu",
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w600,
+            SizedBox(height: 5.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: customText(
+                text: "1-mavzu",
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: customText(
-              text:
-                  "Kirish. “HTML 5 ning asosiy xususiyatlari va uning kerakli standartlari.",
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
-              textColor: AppColors.greyTextColor,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: customText(
+                text:
+                    "Kirish. “HTML 5 ning asosiy xususiyatlari va uning kerakli standartlari.",
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                textColor: AppColors.greyTextColor,
+              ),
             ),
-          ),
-          SizedBox(height: 5.h),
-          Padding(
+            SizedBox(height: 5.h),
+            buildTabBar(),
+            Divider(),
+            SizedBox(
+              height: 420.h,
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  ChatTabBarView(
+                    messages: messages,
+                    scrollController: scrollController,
+                    messageController: messageController,
+                    sendMessage: _sendMessage,
+                  ),
+                  VideoScriptWidget(),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Padding buildTabBar() {
+    return Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: SizedBox(
               height: 32.h,
@@ -203,32 +228,13 @@ class _VideoLessonScreenState extends State<VideoLessonScreen>
                     labelStyle: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.bold,
-                      fontFamily: "Montserrat",
                     ),
                     tabs: const [Tab(text: "Chat"), Tab(text: "Video matni")],
                   ),
                 ],
               ),
             ),
-          ),
-          Divider(),
-          Expanded(
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                ChatTabBarView(
-                  messages: messages,
-                  scrollController: scrollController,
-                  messageController: messageController,
-                  sendMessage: _sendMessage,
-                ),
-                VideoScriptWidget()
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+          );
   }
 
   @override

@@ -10,10 +10,10 @@ final icons = [
   AppIcons.calendarIcon,
   AppIcons.bookIcon,
   AppIcons.usefullIcon,
-  AppIcons.chartIcon,
+  AppIcons.profileIcon,
 ];
 
-final labels = ["Asosiy", "Dars jadvali", "Fanlar", "O'zlashtirish", "Boshqa"];
+final labels = ["Asosiy", "Dars jadvali", "Fanlar", "Foydali", "Profil"];
 
 @RoutePage()
 class MainScreen extends StatelessWidget {

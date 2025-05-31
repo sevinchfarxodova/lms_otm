@@ -36,10 +36,13 @@ class ModuleCardItem extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            customText(
-              text: title,
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w400,
+            SizedBox(
+              width: 225.w,
+              child: customText(
+                text: title,
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             time != null
                 ? customText(
